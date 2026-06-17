@@ -1,0 +1,38 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.maplibregl-popup-content {
+  padding: 0 !important;
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2) !important;
+}
+
+.maplibregl-popup-close-button {
+  font-size: 18px !important;
+  color: #fff !important;
+  background: rgba(0,0,0,0.35) !important;
+  border-radius: 50% !important;
+  width: 24px !important;
+  height: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  top: 6px !important;
+  right: 6px !important;
+  line-height: 1 !important;
+  z-index: 1 !important;
+}

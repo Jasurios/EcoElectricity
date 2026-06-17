@@ -1,0 +1,367 @@
+.page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #414141;
+  overflow: hidden;
+}
+
+/* ── Side panel ── */
+.sidePanel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 320px;
+  background: #fff;
+  z-index: 1000;
+  overflow-y: auto;
+  box-shadow: 4px 0 24px rgba(0,0,0,0.18);
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidePanelOpen {
+  transform: translateX(0);
+}
+
+.sidePanelClose {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.35);
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background .15s;
+}
+.sidePanelClose:hover { background: rgba(0,0,0,0.55); }
+
+.sidePanelImg {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+.sidePanelImgPlaceholder {
+  width: 100%;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sidePanelBody {
+  padding: 16px 18px 24px;
+  flex: 1;
+}
+
+.sidePanelBadges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.typeBadge {
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  letter-spacing: .5px;
+}
+
+.statusBadge {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.sidePanelName {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.2;
+  margin-bottom: 3px;
+}
+
+.sidePanelNameRu {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-bottom: 14px;
+}
+
+.sidePanelNameAlt {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-bottom: 14px;
+}
+
+.capacityBox {
+  border: 1.5px solid;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.capacityNum {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.capacityUnit {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.capacityLabel {
+  font-size: 10px;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-top: 3px;
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.detailKey {
+  font-size: 10px;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+}
+
+.detailVal {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.sidePanelDesc {
+  font-size: 13px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* ── Map ── */
+.map {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* ── Navbar ── */
+.navbarWrap {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: min(848px, calc(100vw - 48px));
+}
+
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 14px;
+  box-shadow:
+    0px 10px 15px rgba(0, 0, 0, 0.1),
+    0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navBrand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.navLogoCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0d9488 0%, #10b981 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.navTitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #1a2e35;
+  white-space: nowrap;
+}
+
+.searchWrap {
+  position: relative;
+  flex: 1;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  height: 41px;
+  padding: 8px 16px 8px 40px;
+  background: #f0f9f8;
+  border: 0.667px solid #d1e7e5;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #1a2e35;
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: rgba(26, 46, 53, 0.5);
+}
+
+.searchInput:focus {
+  border-color: #0d9488;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.langBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 0.667px solid #d1e7e5;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a2e35;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .15s, border-color .15s;
+}
+
+.langBtn:hover {
+  background: #fff;
+}
+
+.langActive {
+  background: #0d9488 !important;
+  border-color: #0d9488 !important;
+  color: #fff !important;
+}
+
+.logoutBtn {
+  padding: 8px 14px;
+  background: transparent;
+  border: 0.667px solid #d1e7e5;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #547880;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.logoutBtn:hover {
+  background: #f0f9f8;
+  color: #1a2e35;
+}
+
+/* ── Legend ── */
+.legend {
+  position: absolute;
+  bottom: 36px;
+  left: 16px;
+  z-index: 500;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  min-width: 110px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legendDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid rgba(255,255,255,0.7);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+}
+
+.legendLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: #1a2e35;
+}
+
+/* ── Pollution note ── */
+.pollutionNote {
+  margin-top: 14px;
+  border: 1.5px solid;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+}
