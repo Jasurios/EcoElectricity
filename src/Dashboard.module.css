@@ -111,6 +111,32 @@
   margin-bottom: 14px;
 }
 
+.showBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter .15s, background .15s;
+}
+
+.showBtn:hover {
+  filter: brightness(1.08);
+}
+
+.showBtnActive {
+  background: #ef4444 !important;
+}
+
 .capacityBox {
   border: 1.5px solid;
   border-radius: 10px;
@@ -265,6 +291,72 @@
   border-color: #0d9488;
 }
 
+.searchResults {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+  overflow: hidden;
+  max-height: 320px;
+  overflow-y: auto;
+  z-index: 20;
+}
+
+.searchResultItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #fff;
+  border: none;
+  border-bottom: 1px solid #f0f9f8;
+  cursor: pointer;
+  text-align: left;
+}
+
+.searchResultItem:last-child {
+  border-bottom: none;
+}
+
+.searchResultItem:hover {
+  background: #f0f9f8;
+}
+
+.searchResultDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.searchResultName {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a2e35;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.searchResultCountry {
+  font-size: 12px;
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+.searchEmpty {
+  padding: 14px;
+  font-size: 13px;
+  color: #9ca3af;
+  text-align: center;
+}
+
 .navRight {
   display: flex;
   align-items: center;
@@ -297,6 +389,28 @@
   background: #0d9488 !important;
   border-color: #0d9488 !important;
   color: #fff !important;
+}
+
+.statsBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 0.667px solid #d1e7e5;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a2e35;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .15s, border-color .15s;
+}
+
+.statsBtn:hover {
+  background: #f0f9f8;
+  border-color: #0d9488;
 }
 
 .logoutBtn {
@@ -364,4 +478,37 @@
   font-size: 12px;
   font-weight: 600;
   line-height: 1.4;
+}
+
+/* ── DB loading overlay ── */
+.dbLoading {
+  position: absolute;
+  bottom: 20px;
+  right: 16px;
+  z-index: 500;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a2e35;
+}
+
+.dbLoadingSpinner {
+  width: 16px;
+  height: 16px;
+  border: 2.5px solid #d1e7e5;
+  border-top-color: #0d9488;
+  border-radius: 50%;
+  animation: dbSpin 0.8s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes dbSpin {
+  to { transform: rotate(360deg); }
 }
